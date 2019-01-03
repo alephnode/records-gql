@@ -1,0 +1,15 @@
+# database files
+database/
+src/generated/
+
+# packages
+node_modules/
+
+# env variables
+.env
+# misc notes
+project_notes.txt
+.DS_Store
+
+# zeit now deployment config file
+now.json
