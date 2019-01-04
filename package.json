@@ -4,10 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "apollo-server": "^2.3.1",
     "dotenv": "^6.2.0",
-    "graphql-yoga": "^1.16.9",
-    "node-fetch": "^2.3.0",
-    "prisma-binding": "^2.2.12"
+    "graphql": "^14.0.2"
   },
   "scripts": {
     "blastoff": "node src/index.js"
