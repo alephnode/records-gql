@@ -3,7 +3,9 @@ const { importSchema } = require('graphql-import')
 const { Prisma } = require('prisma-binding')
 const path = require('path')
 
-const typeDefs = importSchema(path.resolve('../src/schema.graphql'))
+const typeDefs = importSchema(
+  path.resolve(process.cwd(), '../src/schema.graphql')
+)
 
 const resolvers = {
   Query: {
@@ -19,7 +21,7 @@ const server = new ApolloServer({
   context: req => ({
     ...req,
     prisma: new Prisma({
-      typeDefs: path.resolve('../database/datamodel.prisma'),
+      typeDefs: path.resolve(process.cwd(), '../database/datamodel.prisma'),
       endpoint: process.env.PRISMA_ENDPOINT,
     }),
   }),
