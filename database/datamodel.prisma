@@ -1,0 +1,24 @@
+  type Artist {
+    id: ID! @unique
+    name: String!
+    records: [Record]
+  }
+
+  type Record {
+    id: ID! @unique
+    name: String!
+    tracks: [Track]
+  }
+
+  type Track {
+    id: ID! @unique
+    name: String!
+    track_no: Int
+    artists: [Artist]
+  }
+
+  type Category {
+    id: ID! @unique
+    name: String!
+    description: String
+  }

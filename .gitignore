@@ -2,3 +2,5 @@
 node_modules
 functions
 *.log
+.env
+database/prisma.yml
