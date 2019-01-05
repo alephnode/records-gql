@@ -1,22 +1,21 @@
-require('dotenv').config()
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer, gql } = require("apollo-server-lambda");
 
 // TODO attach to data source
 const artists = [
   {
-    name: 'Georgia Anne Muldrow',
+    name: "Georgia Anne Muldrow",
     records: [
       {
-        name: 'Overload',
+        name: "Overload",
         tracks: [
           {
-            name: 'Play It Up',
-          },
-        ],
-      },
-    ],
-  },
-]
+            name: "Play It Up"
+          }
+        ]
+      }
+    ]
+  }
+];
 
 const typeDefs = gql`
   type Query {
@@ -52,16 +51,14 @@ const typeDefs = gql`
     name: String!
     description: String
   }
-`
+`;
 
 const resolvers = {
   Query: {
-    artists: () => artists,
-  },
-}
+    artists: () => artists
+  }
+};
 
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(({ url }) => {
-  console.log(`✨  Server listening at ${url}`)
-})
+exports.handler = server.createHandler();

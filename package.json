@@ -1,14 +1,18 @@
 {
-  "name": "records-qgl",
+  "name": "records-gql",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Music collection API",
+  "main": "handler.js",
+  "keywords": [],
   "license": "MIT",
-  "dependencies": {
-    "apollo-server": "^2.3.1",
-    "dotenv": "^6.2.0",
-    "graphql": "^14.0.2"
-  },
   "scripts": {
-    "blastoff": "node src/index.js"
+    "build": "netlify-lambda build server"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^0.4.0"
+  },
+  "dependencies": {
+    "apollo-server-lambda": "^2.3.1",
+    "graphql": "^14.0.2"
   }
 }
