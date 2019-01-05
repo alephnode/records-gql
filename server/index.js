@@ -3,7 +3,7 @@ const { importSchema } = require('graphql-import')
 const { Prisma } = require('prisma-binding')
 const path = require('path')
 
-const typeDefs = importSchema(path.resolve('./schema.graphql'))
+const typeDefs = importSchema(path.resolve('../src/schema.graphql'))
 
 const resolvers = {
   Query: {
