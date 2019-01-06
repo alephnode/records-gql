@@ -1,17 +1,8 @@
 const { ApolloServer, gql } = require('apollo-server-lambda')
-const { importSchema } = require('graphql-import')
 const { Prisma } = require('prisma-binding')
 const { typeDefs: td } = require('../src/generated/prisma-schema')
 const typeDefs = require('../src/schema')
-const path = require('path')
-
-const resolvers = {
-  Query: {
-    artists: (_, args, context, info) => {
-      return context.prisma.query.artists({}, info)
-    },
-  },
-}
+const resolvers = require('../src/resolvers')
 
 const server = new ApolloServer({
   typeDefs: gql`
