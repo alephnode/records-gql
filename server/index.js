@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { ApolloServer, gql } = require('apollo-server-lambda')
 const { Prisma } = require('prisma-binding')
 const { typeDefs: td } = require('../src/generated/prisma-schema')

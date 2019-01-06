@@ -6,6 +6,7 @@
   "keywords": [],
   "license": "MIT",
   "scripts": {
+    "serve": "netlify-lambda serve server",
     "build": "netlify-lambda build server"
   },
   "devDependencies": {
@@ -13,6 +14,7 @@
   },
   "dependencies": {
     "apollo-server-lambda": "^2.3.1",
+    "dotenv": "^6.2.0",
     "graphql": "^14.0.2",
     "graphql-import": "^0.7.1",
     "prisma-binding": "^2.2.13"
