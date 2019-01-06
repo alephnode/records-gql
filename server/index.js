@@ -7,7 +7,7 @@ const path = require('path')
 //   path.resolve(process.cwd(), './src/schema.graphql')
 // )
 
-const typeDefs = gql`
+const typeDefs = `
   type Query {
     info: String!
     records: [Record!]!
@@ -962,7 +962,6 @@ const server = new ApolloServer({
   context: req => ({
     ...req,
     prisma: new Prisma({
-      // typeDefs: './src/generated/prisma.graphql',
       typeDefs: prismaTest,
       endpoint: process.env.PRISMA_ENDPOINT,
     }),
