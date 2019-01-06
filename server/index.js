@@ -7,7 +7,7 @@ const path = require('path')
 //   path.resolve(process.cwd(), './src/schema.graphql')
 // )
 
-const typeDefs = `
+const typeDefs = gql`
   type Query {
     info: String!
     records: [Record!]!
@@ -51,7 +51,7 @@ const resolvers = {
   },
 }
 
-const prismaTest = gql`
+const prismaTest = `
   type AggregateArtist {
     count: Int!
   }
