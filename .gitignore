@@ -4,4 +4,3 @@ functions
 *.log
 .env
 database/prisma.yml
-src/generated
