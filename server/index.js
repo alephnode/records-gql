@@ -13,6 +13,7 @@ const server = new ApolloServer({
     ...req,
     prisma: new Prisma({
       typeDefs: td,
+      secret: process.env.PRISMA_SECRET,
       endpoint: process.env.PRISMA_ENDPOINT,
     }),
   }),
